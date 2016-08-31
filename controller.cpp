@@ -2,15 +2,15 @@
 #include <cstdlib>
 using namespace std;
 
-Controller::Controller(): turn(1), score1(0), score2(0), game(NULL), display(NULL){}
+Controller::Controller(): turn(1), score1(0), score2(0), game(nullptr), display(nullptr){}
 
 Controller::~Controller(){
   if(game) {
     delete game;
-    game = NULL;
+    game = nullptr;
   }
   delete display;
-  display = NULL;
+  display = nullptr;
 }
 
 void Controller::makeDisplay(){
