@@ -46,6 +46,11 @@ int main() {
 
   while (window.isOpen())
   {
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+      // get global mouse position
+      sf::Vector2i position = sf::Mouse::getPosition(window);
+      cout << position.x << " " << position.y << endl;
+    }
       sf::Event event;
       while (window.pollEvent(event)) // TODO: Look at docs
       {
