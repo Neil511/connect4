@@ -9,9 +9,8 @@ class Board {
 	std::vector<int> numFilled;
 public:
 	Board();
-  ~Board();
 	bool checkWin();
-	void makeMove(int column, int turn);
-	bool isValid();
+	bool makeMove(int column, int turn);
+	bool isValid(int column);
 };
 #endif
