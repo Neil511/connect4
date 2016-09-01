@@ -10,6 +10,10 @@ class Controller {
   Display* display;
 public:
   Controller();
+  void makeDisplay();
+  void updateViews();
+  void makeGame();
+  void playGame();
 };
 
 #endif
