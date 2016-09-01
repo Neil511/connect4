@@ -2,7 +2,6 @@
 #include <SFML/Graphics.hpp>
 using namespace std;
 
-
 // compile as: g++ main.cpp -o main -lsfml-graphics -lsfml-window -lsfml-system
 int main() {
   cout << "Hello world!" << endl;
