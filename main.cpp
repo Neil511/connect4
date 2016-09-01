@@ -53,12 +53,10 @@ int main() {
       sf::Event event;
       while (window.pollEvent(event)) // TODO: Look at docs
       {
-          if (event.type == sf::Event::Closed)
-              window.close();
+        if (event.type == sf::Event::Closed)
+            window.close();
       }
-
       window.clear();
-
       // Drawing the shapes onto the display
       for(int i = 0; i < 6; i++) {
         for(int j = 0; j < 7; j++) {
@@ -71,6 +69,5 @@ int main() {
       // Displays it
       window.display();
   }
-
   return 0;
 }
