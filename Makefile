@@ -1,6 +1,6 @@
 CXX = g++-5
-CXXFLAGS = -std=c++14 -Wall -MMD -lsfml-graphics -lsfml-window -lsfml-system
-EXEC = chess
+CXXFLAGS = -std=c++14 -Wall -MMD
+EXEC = main -lsfml-graphics -lsfml-window -lsfml-system
 OBJECTS = main.o controller.o display.o board.o
 DEPENDS = ${OBJECTS:.o=.d}
 
