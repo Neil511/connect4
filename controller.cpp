@@ -2,12 +2,12 @@
 #include <cstdlib>
 using namespace std;
 
-Controller::Controller(): turn(1), score1(0), score2(0), game(nullptr), display(nullptr){}
+Controller::Controller(): turn(1), score1(0), score2(0), board(nullptr), display(nullptr){}
 
 Controller::~Controller(){
-  if(game) {
-    delete game;
-    game = nullptr;
+  if(board) {
+    delete board;
+    board = nullptr;
   }
   delete display;
   display = nullptr;
