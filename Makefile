@@ -1,15 +1,16 @@
 CXX = g++-5
-CXXFLAGS = -std=c++14 -Wall -MMD
-EXEC = main -lsfml-graphics -lsfml-window -lsfml-system
+CXXFLAGS = -std=c++14 -Wall -MMD 
+LDFLAGS= -lsfml-graphics -lsfml-window -lsfml-system
+EXEC = main
 OBJECTS = main.o controller.o display.o board.o
 DEPENDS = ${OBJECTS:.o=.d}
 
 ${EXEC}: ${OBJECTS}
-	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC} -g
+	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC} -g ${LDFLAGS}
 
 -include ${DEPENDS}
 
 .PHONY: clean
 
 clean:
-	rm ${OBJECTS} ${EXEC[0]} ${DEPENDS}
+	rm ${OBJECTS} ${EXEC} ${DEPENDS}
