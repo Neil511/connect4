@@ -4,11 +4,11 @@
 #include <string>
 
 class Display {
-  sf::RenderWindow window(sf::VideoMode(800, 900), "Connect Four");
+  sf::RenderWindow window;
   std::vector<std::vector<sf::CircleShape>> board;
 public:
   Display();
-  void updateBoard(int column, int turn);
+  void updateBoard(int row, int column, int turn);
   bool isWindowOpen();
 };
 #endif

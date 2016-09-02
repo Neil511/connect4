@@ -1,0 +1,25 @@
+#include "display.hpp"
+
+Display::Display(): window(sf::VideoMode(800, 900), "Connect Four") {
+  for (int i = 0; i < 6; ++i) {
+    std::vector<sf::CircleShape> row;
+    for (int j = 0; j < 7; ++j) {
+      sf::CircleShape circle;
+      circle.setRadius(50);
+      circle.setPosition(110 * j + 25, 110 * i + 200);
+      circle.setFillColor(sf::Color::Green);
+      row.emplace_back(circle);
+    }
+    board.emplace_back(row);
+  }
+}
+
+bool Display::isWindowOpen(){
+  return window.isOpen();
+}
+
+void Display::updateBoard(int row, int column, int turn) {
+  sf::CircleShape circle = board.at(row).at(column);
+  if(turn == 1) circle.setFillColor(sf::Color::Red);
+  else circle.setFillColor(sf::Color::Red);
+}

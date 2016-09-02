@@ -7,7 +7,9 @@ Controller::Controller(): turn(1), score1(0), score2(0), board(nullptr), display
 void Controller::makeDisplay(){
   if(display) {
     // TODO
+    // Create window and draw basics
   }
+  // If it doesn't already exist
 }
 
 void Controller::updateViews(){
