@@ -23,3 +23,20 @@ void Display::updateBoard(int row, int column, int turn) {
   if(turn == 1) circle.setFillColor(sf::Color::Red);
   else circle.setFillColor(sf::Color::Red);
 }
+
+void Display::render() {
+  while(window.isOpen()) {
+    sf::Event event;
+      while (window.pollEvent(event)) // TODO: Look at docs
+      {
+        if(event.type == sf::Event::Closed) window.close();
+      }
+    window.clear();
+    for(int i = 0; i < 6; ++i) {
+      for(int j = 0; j < 7; ++j) {
+        window.draw(board.at(i).at(j));
+      }
+    }
+    window.display();
+  }
+}

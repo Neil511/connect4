@@ -6,8 +6,8 @@ class Board;
 class Controller {
   int turn; // first turn is p1 then rotates score1 + score2 % 2
   int score1, score2;
-  Board* board;
-  Display* display;
+  Board* board; // this should be a shared ptr
+  Display* display; // this one should be unique ptr
 public:
   Controller();
   void makeDisplay();

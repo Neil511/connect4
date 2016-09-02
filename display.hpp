@@ -10,5 +10,6 @@ public:
   Display();
   void updateBoard(int row, int column, int turn);
   bool isWindowOpen();
+  void render();
 };
 #endif
