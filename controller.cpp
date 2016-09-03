@@ -1,10 +1,19 @@
 #include "controller.hpp"
 #include "display.hpp"
 #include "board.hpp"
+#include "player.hpp"
 #include <cstdlib>
 using namespace std;
 
-Controller::Controller(): turn(1), score1(0), score2(0), board(nullptr), display(nullptr){}
+Controller::Controller() {
+  turn = 1;
+  score1 = 0;
+  score2 = 0;
+  board = nullptr;
+  display = nullptr;
+  p1 = nullptr;
+  p2 = nullptr;
+}
 
 void Controller::makeDisplay(){
   // if(display) {
