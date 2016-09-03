@@ -6,7 +6,7 @@ class Player {
   Board* board;
 public:
   Player(int number, Board* board);
-  virtual int getMove() = 0;
+  virtual int getMove() = 0; // all players are either human or CPU
 };
 
 #endif
