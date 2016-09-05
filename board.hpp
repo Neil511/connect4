@@ -12,6 +12,8 @@ public:
 	bool checkWin();
 	bool makeMove(int column, int turn);
 	bool isValid(int column);
+  std::vector<std::vector<int>> getBoard();
+  std::vector<int> getNumFilled();
 private:
   bool checkDirection(int a1, int a2, int b1, int b2, int c1, int c2, int d1, int d2);
 };

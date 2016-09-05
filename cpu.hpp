@@ -2,6 +2,8 @@
 #define __CPU_H__
 
 #include "player.hpp"
+#include <vector>
+
 class CPU: public Player {
   const int level; // between 1 to 4
 public:

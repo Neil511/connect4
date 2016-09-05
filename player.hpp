@@ -2,7 +2,8 @@
 #define __PLAYER_H__
 class Board;
 class Player {
-  int playerNumber;
+protected:
+  int playerNumber; // CPU will always be p2
   Board* board;
 public:
   Player(int number, Board* board);

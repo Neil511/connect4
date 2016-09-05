@@ -54,3 +54,10 @@ bool Board::checkWin(){
 	}
 	return false;
 }
+
+std::vector<std::vector<int>> Board::getBoard() {
+	return board;
+}
+std::vector<int> Board::getNumFilled() {
+	return numFilled;
+}
