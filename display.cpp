@@ -6,7 +6,7 @@ Display::Display(): window(sf::VideoMode(800, 900), "Connect Four") {
     for (int j = 0; j < 7; ++j) {
       sf::CircleShape circle;
       circle.setRadius(50);
-      circle.setPosition(110 * j + 25, 110 * i + 200);
+      circle.setPosition(110 * j + 20, 110 * i + 200);
       circle.setFillColor(sf::Color::Green);
       row.emplace_back(circle);
     }
