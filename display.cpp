@@ -40,3 +40,7 @@ void Display::render() {
     window.display();
   }
 }
+
+sf::RenderWindow* Display::getWindow() {
+  return &window;
+}
