@@ -6,21 +6,23 @@ Board::Board() {
 		std::vector<int> row;
 		for (int j = 0; j < 7; ++j) {
 			row.emplace_back(0);
+			numFilled.emplace_back(0);
 		}
 		board.emplace_back(row);
 	}
+
 }
 
 bool Board::isValid(int column) {
-	if (numFilled[column] == 7) return false;
+	if (numFilled.at(column) == 7) return false;
 	return true;
 }
 
 bool Board::makeMove(int turn, int column) {
 	if(!isValid(column)) return false;
 
-	board[numFilled[column]][column] = turn;
-	numFilled[column]++;
+	board.at(numFilled.at(column)).at(column) = turn;
+	numFilled.at(column)++;
 	history.emplace_back(column);
 	return true;
 }
@@ -58,6 +60,7 @@ bool Board::checkWin(){
 std::vector<std::vector<int>> Board::getBoard() {
 	return board;
 }
+
 std::vector<int> Board::getNumFilled() {
 	return numFilled;
 }

@@ -26,9 +26,10 @@ void Controller::makeDisplay(){
   display = new Display();
 }
 
-void Controller::updateViews(){
+void Controller::updateViews(int turn, int move){
   // TODO
-  // Shouldn't this accept some parameters?
+  std::vector<int> numFilled = board->getNumFilled();
+  display->updateBoard(numFilled.at(move - 1), move, turn);
 }
 
 void Controller::makeGame(){
@@ -44,12 +45,26 @@ void Controller::playGame(){
   // while(!board->checkWin()) {
     // while game is  going on do game logic
     // render stuff here
+  sf::Event event;
+  sf::RenderWindow* window = display->getWindow();
   while(display->isWindowOpen()) {
+
+    while (window->pollEvent(event)) {
+      // std::cout << "triggered!" << std::endl;
+      if(event.type == sf::Event::Closed) {
+        std::cout << "triggered inside!" << std::endl;
+        window->close();
+      }
+    }
+
     display->render();
     int move = p1->getMove();
     cout << move << endl;
+    if(board->isValid(move)) {
+      board->makeMove(turn, move);
+      updateViews(turn, move);
+    }
   }
-  delete display;
     // cout << move << endl;
     // board->makeMove(1, move);
     // updateViews();

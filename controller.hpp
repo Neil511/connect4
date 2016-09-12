@@ -13,7 +13,7 @@ class Controller {
 public:
   Controller();
   void makeDisplay();
-  void updateViews();
+  void updateViews(int turn, int move);
   void makeGame();
   void playGame();
 };

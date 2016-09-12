@@ -1,5 +1,5 @@
 #include "display.hpp"
-
+#include <iostream>
 Display::Display(): window(sf::VideoMode(800, 900), "Connect Four") {
   for (int i = 0; i < 6; ++i) {
     std::vector<sf::CircleShape> row;
@@ -25,15 +25,6 @@ void Display::updateBoard(int row, int column, int turn) {
 }
 
 void Display::render() {
-  // while(window.isOpen()) {
-    sf::Event event;
-      while (window.pollEvent(event)) // TODO: Look at docs
-      {
-        if(event.type == sf::Event::Closed) {
-          window.close();
-          return;
-        }
-      }
     window.clear();
     for(int i = 0; i < 6; ++i) {
       for(int j = 0; j < 7; ++j) {
@@ -41,7 +32,6 @@ void Display::render() {
       }
     }
     window.display();
-  // }
 }
 
 sf::RenderWindow* Display::getWindow() {

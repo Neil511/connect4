@@ -16,9 +16,9 @@ int Human::getMove() {
       xPos = position.x ;
       yPos = position.y;
       //cout << xPos << " " << yPos << endl;
-      cout << "Mouse Pressed!" << endl;
-      cout << xPos << endl;
-      cout << yPos << endl;
+      // cout << "Mouse Pressed!" << endl;
+      // cout << xPos << endl;
+      // cout << yPos << endl;
     }
     if(yPos >= 200) {
       if(xPos >= 20 && xPos <= 120) return 1;
