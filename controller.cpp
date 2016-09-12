@@ -23,11 +23,11 @@ void Controller::makeDisplay(){
   //   // Don't know what this is for, new games?
   // }
   // If it doesn't already exist
-  display = new Display();
+  display = std::make_shared<Display>();
 }
 
 void Controller::updateViews(int turn, int move){
-  // TODO
+  if(move < 1 || move > 6) cout << "Move range error!" << endl;
   std::vector<int> numFilled = board->getNumFilled();
   display->updateBoard(numFilled.at(move - 1), move, turn);
 }
@@ -36,9 +36,9 @@ void Controller::makeGame(){
   // TODO
   // Call makeDisplay in this function?
   makeDisplay();
-  board = new Board();
-  p1 = new Human(1, board, display);
-  p2 = new Human(2, board, display);
+  board = std::make_shared<Board>();
+  p1 = std::make_shared<Human>(1, board, display);
+  p2 = std::make_shared<Human>(2, board, display);
 }
 
 void Controller::playGame(){

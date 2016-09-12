@@ -3,7 +3,7 @@
 #include <SFML/Window.hpp>
 #include <iostream>
 using namespace std;
-Human::Human(int playerNumber, Board* board, Display* display): Player(playerNumber, board), display(display) {}
+Human::Human(int playerNumber, std::shared_ptr<Board>, std::shared_ptr<Display> display): Player(playerNumber, board), display(display) {}
 
 int Human::getMove() {
   sf::RenderWindow* window = display->getWindow();

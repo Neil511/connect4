@@ -7,7 +7,7 @@
 class CPU: public Player {
   const int level; // between 1 to 4
 public:
-  CPU(int playerNumber, Board* board, int level);
+  CPU(int playerNumber, std::shared_ptr<Board> board, int level);
   int getMove();
 };
 

@@ -2,7 +2,7 @@
 #include <stdexcept>
 #include "board.hpp"
 
-CPU::CPU(int playerNumber, Board* board, int level): Player(playerNumber, board), level(level) {}
+CPU::CPU(int playerNumber, std::shared_ptr<Board> board, int level): Player(playerNumber, board), level(level) {}
 
 bool checkDirection(std::vector<std::vector<int>> pieces, int a1, int a2, int b1, int b2, int c1, int c2, int d1, int d2) {
   try {

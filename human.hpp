@@ -4,9 +4,9 @@
 #include "player.hpp"
 class Display;
 class Human: public Player {
-  Display* display;
+  std::shared_ptr<Display> display;
 public:
-  Human(int playerNumber, Board* board, Display* display);
+  Human(int playerNumber, std::shared_ptr<Board> board, std::shared_ptr<Display> display);
   int getMove();
 };
 
