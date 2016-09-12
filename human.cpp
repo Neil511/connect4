@@ -2,6 +2,8 @@
 #include "display.hpp"
 #include <SFML/Window.hpp>
 #include <iostream>
+#include <chrono>
+#include <thread>
 using namespace std;
 Human::Human(int playerNumber, std::shared_ptr<Board>, std::shared_ptr<Display> display): Player(playerNumber, board), display(display) {}
 
@@ -19,6 +21,10 @@ int Human::getMove() {
       // cout << "Mouse Pressed!" << endl;
       // cout << xPos << endl;
       // cout << yPos << endl;
+      using namespace std::this_thread;
+      using namespace std::chrono_literals;
+      using std::chrono::system_clock;
+      sleep_for(500ms);
     }
     if(yPos >= 200) {
       if(xPos >= 20 && xPos <= 120) return 1;

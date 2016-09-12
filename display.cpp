@@ -1,5 +1,6 @@
 #include "display.hpp"
 #include <iostream>
+using namespace std;
 Display::Display(): window(sf::VideoMode(800, 900), "Connect Four") {
   for (int i = 0; i < 6; ++i) {
     std::vector<sf::CircleShape> row;
@@ -19,7 +20,8 @@ bool Display::isWindowOpen(){
 }
 
 void Display::updateBoard(int row, int column, int turn) {
-  sf::CircleShape circle = board.at(row).at(column);
+  cout << "Turn: " << turn << endl;
+  sf::CircleShape& circle = board.at(5 - row).at(column);
   if(turn == 1) circle.setFillColor(sf::Color::Red);
   else circle.setFillColor(sf::Color::Red);
 }

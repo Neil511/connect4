@@ -27,18 +27,18 @@ void Controller::makeDisplay(){
 }
 
 void Controller::updateViews(int turn, int move){
-  if(move < 1 || move > 6) cout << "Move range error!" << endl;
+  if(move < 1 || move > 7) cout << "Move range error!" << endl;
   std::vector<int> numFilled = board->getNumFilled();
-  display->updateBoard(numFilled.at(move - 1), move, turn);
+  display->updateBoard(numFilled.at(move - 1) - 1, move - 1, turn);
 }
 
 void Controller::makeGame(){
-  // TODO
-  // Call makeDisplay in this function?
   makeDisplay();
   board = std::make_shared<Board>();
   p1 = std::make_shared<Human>(1, board, display);
   p2 = std::make_shared<Human>(2, board, display);
+  board->printBoard();
+  board->printNumFilled();
 }
 
 void Controller::playGame(){
@@ -61,8 +61,11 @@ void Controller::playGame(){
     int move = p1->getMove();
     cout << move << endl;
     if(board->isValid(move)) {
+      cout << "Inside the isValid in Controlla" << endl;
       board->makeMove(turn, move);
       updateViews(turn, move);
+      board->printBoard();
+      board->printNumFilled();
     }
   }
     // cout << move << endl;
