@@ -10,7 +10,7 @@ class Board {
 public:
 	Board();
 	bool checkWin();
-	bool makeMove(int column, int turn);
+	bool makeMove(int turn, int column);
 	bool isValid(int column);
   std::vector<std::vector<int>> getBoard();
   std::vector<int> getNumFilled();

@@ -16,7 +16,7 @@ bool Board::isValid(int column) {
 	return true;
 }
 
-bool Board::makeMove(int column, int turn) {
+bool Board::makeMove(int turn, int column) {
 	if(!isValid(column)) return false;
 
 	board[numFilled[column]][column] = turn;

@@ -25,11 +25,14 @@ void Display::updateBoard(int row, int column, int turn) {
 }
 
 void Display::render() {
-  while(window.isOpen()) {
+  // while(window.isOpen()) {
     sf::Event event;
       while (window.pollEvent(event)) // TODO: Look at docs
       {
-        if(event.type == sf::Event::Closed) window.close();
+        if(event.type == sf::Event::Closed) {
+          window.close();
+          return;
+        }
       }
     window.clear();
     for(int i = 0; i < 6; ++i) {
@@ -38,7 +41,7 @@ void Display::render() {
       }
     }
     window.display();
-  }
+  // }
 }
 
 sf::RenderWindow* Display::getWindow() {

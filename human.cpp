@@ -7,14 +7,18 @@ Human::Human(int playerNumber, Board* board, Display* display): Player(playerNum
 
 int Human::getMove() {
   sf::RenderWindow* window = display->getWindow();
-  int xPos, yPos;
+  int xPos = -1;
+  int yPos = -1;
   while(true) {
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
       // get global mouse position
       sf::Vector2i position = sf::Mouse::getPosition(*window);
       xPos = position.x ;
       yPos = position.y;
-      cout << xPos << " " << yPos << endl;
+      //cout << xPos << " " << yPos << endl;
+      cout << "Mouse Pressed!" << endl;
+      cout << xPos << endl;
+      cout << yPos << endl;
     }
     if(yPos >= 200) {
       if(xPos >= 20 && xPos <= 120) return 1;
