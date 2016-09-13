@@ -5,7 +5,9 @@
 #include <chrono>
 #include <thread>
 using namespace std;
-Human::Human(int playerNumber, std::shared_ptr<Board>, std::shared_ptr<Display> display): Player(playerNumber, board), display(display) {}
+Human::Human(int playerNumber, std::shared_ptr<Board> board, std::shared_ptr<Display> display): Player(playerNumber, board) {
+  this->display = display;
+}
 
 int Human::getMove() {
   sf::RenderWindow* window = display->getWindow();

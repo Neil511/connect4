@@ -18,7 +18,7 @@ Controller::Controller() {
 }
 
 void Controller::makeDisplay(){
-  display = std::make_shared<Display>();
+  
 }
 
 void Controller::updateViews(int turn, int move){
@@ -29,12 +29,12 @@ void Controller::updateViews(int turn, int move){
 
 void Controller::makeGame(){
   try {
-    makeDisplay();
-  board = std::make_shared<Board>();
-  p1 = std::make_shared<Human>(1, board, display);
-  p2 = std::make_shared<Human>(2, board, display);
-  board->printBoard();
-  board->printNumFilled();
+    display = std::make_shared<Display>();
+    board = std::make_shared<Board>();
+    p1 = std::make_shared<Human>(1, board, display);
+    p2 = std::make_shared<Human>(2, board, display);
+    board->printBoard();
+    board->printNumFilled();
   }
   catch (...) {
     cout << "Breaking here! Line 40" << endl;
