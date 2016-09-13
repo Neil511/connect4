@@ -18,11 +18,6 @@ Controller::Controller() {
 }
 
 void Controller::makeDisplay(){
-  // if(display) {
-  //   // TODO
-  //   // Don't know what this is for, new games?
-  // }
-  // If it doesn't already exist
   display = std::make_shared<Display>();
 }
 
@@ -33,12 +28,17 @@ void Controller::updateViews(int turn, int move){
 }
 
 void Controller::makeGame(){
-  makeDisplay();
+  try {
+    makeDisplay();
   board = std::make_shared<Board>();
   p1 = std::make_shared<Human>(1, board, display);
   p2 = std::make_shared<Human>(2, board, display);
   board->printBoard();
   board->printNumFilled();
+  }
+  catch (...) {
+    cout << "Breaking here! Line 40" << endl;
+  }
 }
 
 void Controller::playGame(){

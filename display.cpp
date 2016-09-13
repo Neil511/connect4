@@ -1,5 +1,6 @@
 #include "display.hpp"
 #include <iostream>
+
 using namespace std;
 Display::Display(): window(sf::VideoMode(800, 900), "Connect Four") {
   for (int i = 0; i < 6; ++i) {
@@ -13,8 +14,10 @@ Display::Display(): window(sf::VideoMode(800, 900), "Connect Four") {
     }
     board.emplace_back(row);
   }
+
   // Font
-  sf::Font font;
+  sf::Font arial;
+  font = arial;
   font.loadFromFile("arial.ttf");
   // Text
   // Score
@@ -25,7 +28,7 @@ Display::Display(): window(sf::VideoMode(800, 900), "Connect Four") {
   score1.setColor(sf::Color::Red);
   score1.setPosition(300, 10);
 
-  sf::Text temp2("1", font);
+  sf::Text temp2("2", font);
   score2 = temp2;
   score2.setCharacterSize(70);
   score2.setStyle(sf::Text::Bold);
