@@ -13,6 +13,30 @@ Display::Display(): window(sf::VideoMode(800, 900), "Connect Four") {
     }
     board.emplace_back(row);
   }
+  // Font
+  sf::Font font;
+  font.loadFromFile("arial.ttf");
+  // Text
+  // Score
+  sf::Text temp1("1", font);
+  score1 = temp1;
+  score1.setCharacterSize(70);
+  score1.setStyle(sf::Text::Bold);
+  score1.setColor(sf::Color::Red);
+  score1.setPosition(300, 10);
+
+  sf::Text temp2("1", font);
+  score2 = temp2;
+  score2.setCharacterSize(70);
+  score2.setStyle(sf::Text::Bold);
+  score2.setColor(sf::Color::Blue);
+  score2.setPosition(400, 10);
+  // Turn
+  sf::Text turn("Player 1's turn", font);
+  turn.setCharacterSize(70);
+  turn.setStyle(sf::Text::Bold);
+  turn.setColor(sf::Color::Green);
+  turn.setPosition(120, 100);
 }
 
 bool Display::isWindowOpen(){
@@ -33,6 +57,8 @@ void Display::render() {
         window.draw(board.at(i).at(j));
       }
     }
+    window.draw(score1);
+    window.draw(score2);
     window.display();
 }
 

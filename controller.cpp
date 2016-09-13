@@ -68,9 +68,6 @@ void Controller::playGame(){
       board->printNumFilled();
     }
   }
-    // cout << move << endl;
-    // board->makeMove(1, move);
-    // updateViews();
   //}
   // TODO
   // handles the majority of controller logic

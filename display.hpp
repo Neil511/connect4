@@ -6,6 +6,7 @@
 class Display {
   sf::RenderWindow window;
   std::vector<std::vector<sf::CircleShape>> board;
+  sf::Text score1, score2;
 public:
   Display();
   void updateBoard(int row, int column, int turn);
