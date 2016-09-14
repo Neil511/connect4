@@ -2,8 +2,8 @@
 Game of Connect 4 developed in C++
 
 ##Made Using
-1. SFML (Simple Fast Media Library), http://www.sfml-dev.org/index.php
-2. C++14, compiled with g++ Version 5
+* SFML (Simple Fast Media Library), http://www.sfml-dev.org/index.php
+* C++14, compiled with g++ Version 5
 
 ##Changelog
 * September 14, 2016: First official release V1.0.0
