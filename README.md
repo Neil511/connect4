@@ -1,5 +1,5 @@
 # connect4
-Game of Connect 4 developed in C++
+Game of Connect 4 developed in C++ using the MVC Design Pattern
 
 ##Made Using
 * SFML (Simple Fast Media Library), http://www.sfml-dev.org/index.php
