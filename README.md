@@ -11,7 +11,6 @@ Game of Connect 4 developed in C++
 ##Proposed Changes / Future Updates
 * Player versus Computer mode with varying difficulty
 * Undo button
-* 
 
 If you have any feedback or suggestions please feel free to open up an issue.
 Thank you!
