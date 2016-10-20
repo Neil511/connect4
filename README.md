@@ -9,6 +9,7 @@ Game of Connect 4 developed in C++ using the MVC Design Pattern
 * September 14, 2016: First official release V1.0.0
 
 ##Proposed Changes / Future Updates
+* Fix window close bug
 * Player versus Computer mode with varying difficulty
 * Undo button
 
